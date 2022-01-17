@@ -1,0 +1,5 @@
+# Ignore JetBrains
+.idea/
+
+# Ignore DB files
+*.sqlt
