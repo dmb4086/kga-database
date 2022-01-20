@@ -1,39 +1,83 @@
 -- Create a test table to validate creation method
-CREATE TABLE test
+CREATE TABLE Test
 (
     test_id   INTEGER PRIMARY KEY,
     test_name TEXT NOT NULL
 );
 
 -- Some test data to read
-INSERT INTO test (test_name)
+INSERT INTO Test (test_name)
 VALUES ('A Test');
-INSERT INTO test (test_name)
+INSERT INTO Test (test_name)
 VALUES ('Another Test');
 
--- Create plant type
-CREATE TABLE plant_type (
-    id INTEGER PRIMARY KEY,
-    type TEXT NOT NULL
+-- Create tables for plants
+CREATE TABLE Symptom
+(
+    symptom_id  INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT
 );
 
--- Add material table
-CREATE TABLE material (
-    id INTEGER PRIMARY KEY,
-    name TEXT NOT NULL,
-    description TEXT NOT NULL
+CREATE TABLE Remedy
+(
+    remedy_id   INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT
 );
 
--- Add required tables for ailment
--- symptom
-CREATE TABLE symptom (
-    id INTEGER PRIMARY KEY,
-    symptom TEXT NOT NULL,
-    description TEXT NOT NULL
+CREATE TABLE Ailment
+(
+    ailment_id INTEGER PRIMARY KEY,
+    name       TEXT    NOT NULL,
+    remedy_id  INTEGER NOT NULL,
+    symptom_id INTEGER NOT NULL,
+    CONSTRAINT fk_remedy
+        FOREIGN KEY (remedy_id)
+            REFERENCES Remedy (remedy_id),
+    CONSTRAINT fk_symptom
+        FOREIGN KEY (symptom_id)
+            REFERENCES Symptom (symptom_id)
 );
 
-CREATE TABLE remedy (
-    id INTEGER PRIMARY KEY,
-    symptom TEXT NOT NULL,
-    description TEXT NOT NULL
+CREATE TABLE Material
+(
+    material_id INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE PlantType
+(
+    type_id     INTEGER PRIMARY KEY,
+    name        NAME    NOT NULL,
+    description TEXT,
+    ailment_id  INTEGER NOT NULL,
+    material_id INTEGER NOT NULL,
+    CONSTRAINT fk_ailment
+        FOREIGN KEY (ailment_id)
+            REFERENCES Ailment (ailment_id),
+    CONSTRAINT fk_material
+        FOREIGN KEY (material_id)
+            REFERENCES Material (material_id)
+);
+
+CREATE TABLE Project
+(
+    project_id  INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE Plant
+(
+    plant_id   INTEGER PRIMARY KEY,
+    project_id INTEGER NOT NULL,
+    type_id    INTEGER NOT NULL,
+    CONSTRAINT fk_project
+        FOREIGN KEY (project_id)
+            REFERENCES Project (project_id),
+    CONSTRAINT fk_type
+        FOREIGN KEY (type_id)
+            REFERENCES PlantType (type_id)
 );
