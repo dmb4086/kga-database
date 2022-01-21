@@ -72,6 +72,7 @@ CREATE TABLE Project
 CREATE TABLE Plant
 (
     plant_id   INTEGER PRIMARY KEY,
+    planted_date DATE,
     project_id INTEGER NOT NULL,
     type_id    INTEGER NOT NULL,
     CONSTRAINT fk_project
