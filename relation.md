@@ -12,4 +12,6 @@ PlantType(__type_id__, name, description, *ailment_id*, *material_id*)
 
 Project(__project_id__, name, description)
 
-Plant(__plant_id__, planted_date, *project_id*, *type_id*)
+LifeCycle(__state_id__, name, description)
+
+Plant(__plant_id__, planted_date, *project_id*, *type_id*, *state_id*)

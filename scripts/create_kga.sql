@@ -69,16 +69,27 @@ CREATE TABLE Project
     description TEXT
 );
 
+CREATE TABLE LifeCycle
+(
+    state_id  INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL,
+    description TEXT
+);
+
 CREATE TABLE Plant
 (
     plant_id   INTEGER PRIMARY KEY,
     planted_date DATE,
     project_id INTEGER NOT NULL,
     type_id    INTEGER NOT NULL,
+    state_id   INTEGER NOT NULL,
     CONSTRAINT fk_project
         FOREIGN KEY (project_id)
             REFERENCES Project (project_id),
     CONSTRAINT fk_type
         FOREIGN KEY (type_id)
-            REFERENCES PlantType (type_id)
+            REFERENCES PlantType (type_id),
+    CONSTRAINT fk_state
+        FOREIGN KEY (state_id)
+            REFERENCES LifeCycle (state_id)
 );
