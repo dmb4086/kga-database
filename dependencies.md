@@ -14,4 +14,4 @@
 
 { material_id } -> { material_name, material_description }
 
-{ state_id } -> { state_name, state_description
+{ state_id } -> { state_name, state_description }
