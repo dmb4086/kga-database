@@ -97,9 +97,11 @@ VALUES (1, 'Early Blight', 1, 1);
 INSERT INTO Material (material_id, name, description)
 VALUES (1, 'Trowel', 'A small handheld shovel or spade.');
 INSERT INTO Material (material_id, name, description)
-VALUES (2, 'Pruning Shears', 'Hand pruners, also called secateurs, help reign in plants that are getting out of control and taking over.');
+VALUES (2, 'Pruning Shears',
+        'Hand pruners, also called secateurs, help reign in plants that are getting out of control and taking over.');
 INSERT INTO Material (material_id, name, description)
-VALUES (3, 'Watering Can', 'There are 2 basic types of watering cans, plastic or metal. There are hundreds of styles, colors, sizes and nozzle options.');
+VALUES (3, 'Watering Can',
+        'There are 2 basic types of watering cans, plastic or metal. There are hundreds of styles, colors, sizes and nozzle options.');
 
 -- Add types
 INSERT INTO PlantType (type_id, name, description, ailment_id, material_id)
@@ -107,7 +109,9 @@ VALUES (1, 'Tomato', 'Some kind of fruit, eh.', 1, 1);
 INSERT INTO PlantType (type_id, name, description, ailment_id, material_id)
 VALUES (2, 'Pepper', 'Another kind of fruit, eh.', 1, 2);
 INSERT INTO PlantType (type_id, name, description, ailment_id, material_id)
-VALUES (3, 'Eggplant', 'The eggplant is a delicate, tropical perennial plant often cultivated as a tender or half-hardy annual in temperate climates.', 1, 3);
+VALUES (3, 'Eggplant',
+        'The eggplant is a delicate, tropical perennial plant often cultivated as a tender or half-hardy annual in temperate climates.',
+        1, 3);
 
 -- Add projects
 INSERT INTO Project (project_id, name, description)
@@ -126,7 +130,7 @@ INSERT INTO LifeCycle (state_id, name)
 VALUES (3, 'Adult Plant');
 
 -- Add some plants
-INSERT INTO Plant (plant_id, planted_date, project_id, type_id, state_id) 
+INSERT INTO Plant (plant_id, planted_date, project_id, type_id, state_id)
 VALUES (1, 20220121, 1, 1, 3);
 INSERT INTO Plant (plant_id, planted_date, project_id, type_id, state_id)
 VALUES (2, 20220121, 2, 2, 2);
