@@ -12,7 +12,8 @@ sqlite3 kga.sqlt < create_kga.sql
 
 ## Testing Script
 
-The testing script is written python and can be run from this folder with the following command.
+The testing script is written python and can be run from this folder with the following command. This script only makes
+use of libraries bundled in Python.
 
 ```bash
 python3 database_test.py kga.sqlt
