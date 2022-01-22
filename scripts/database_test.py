@@ -31,8 +31,8 @@ def type_by_project(conn, project_number) -> None:
         "SELECT PR.name, PlantType.name, LC.name "
         "FROM PlantType "
         "JOIN Plant PL ON PlantType.type_id = PL.type_id "
-        "JOIN LifeCycle LC on PL.state_id = LC.state_id "
-        "JOIN Project PR on PL.project_id = PR.project_id "
+        "JOIN LifeCycle LC ON PL.state_id = LC.state_id "
+        "JOIN Project PR ON PL.project_id = PR.project_id "
         "WHERE PL.project_id = ?",
         (project_number,)
     )
