@@ -1,7 +1,0 @@
-# App Narrative
-
-The original designs given to us by the entrepreneur do not fit very well for a database in a mobile app. These designs show multiple databases separated into different topics and chapters, much like a book. This book layout would not be useful for an app because it restricts the information too much. Users like to navigate to whatever information they currently need, not read everything in order like chapters in a book.
-
-Instead, the new design that we are proposing is for one database that is separated into several different tables, like a Plants table, an ailments table, and a materials table. These tables would be connected together, allowing users to search for the specific information that they want. For example, if an user wanted to just look at ailments for a specific plant like a rose, they could search for rose ailments without having to look through materials. This allows each individual user to use the app how they want, searching for what they need at that moment.
-
-We feel that our proposed solution would work better than the initial designs because it is a more appropriate structure for a mobile app. This would be more along the lines of what users would be used to from other apps instead of the book format that was proposed. The tables design would be better because there is not much point in implementing a database for an app if it will just be structured like a book. The entreprenuer should consider making the app with our plans for the database instead, as it fits the strengths of a database.
